@@ -29,7 +29,7 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 1. Nous allons commencer par identifier les caractéristiques : 
 - les types de symboles qu'on peut trouver dans une chaîne :  (), {}, et [].
 - Une chaîne peut être **balanced** (tous les symboles ouverts ont des correspondances fermées) ou **! balanced**.
-- La longueur que peut prendre de la chaîne : longueur zéro (vide), longueur paire (ex. : (), {[()()]}  ) ou longueur impaire (ex. : {[().   )4
+- La longueur que peut prendre de la chaîne : longueur zéro (vide), longueur paire (ex. : (), {[()()]}  ) ou longueur impaire (ex. : {[().   )
 
 J'ai commencé à identifier quelques partition blocks : 
 - Partition 1 : Chaînes équilibrées
