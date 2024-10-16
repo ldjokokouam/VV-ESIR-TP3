@@ -31,7 +31,7 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 - Une chaîne peut être **balanced** (tous les symboles ouverts ont des correspondances fermées) ou **! balanced**.
 - La longueur que peut prendre de la chaîne : longueur zéro (vide), longueur paire (ex. : (), {[()()]}  ) ou longueur impaire (ex. : {[().   )4
 
-Nous allons aussi identifier quelques partition blocks : 
+J'ai commencé à identifier quelques partition blocks : 
 - Partition 1 : Chaînes équilibrées
 Exemples : "" (chaine vide), 
 "{}", "[]", "()", 
@@ -48,3 +48,28 @@ Exemples : "{", "[", "(",  (1 seul symbole ouvert et non fermé)
 Exemples : "}", "]", ")", (1 seul symbole fermé et non ouvert)
 "}}}" (plusieurs symboles fermés)
 
+2. J'ai commencé par écrire des tests couvrant les cas de chaque partitions de la première question. 
+
+Pour vérifier leur couverture, j'ai utilisé l'option **"Coverage As > JUnit Test" dans Eclipse**, ce qui m'a permis de visualiser les parties du code couvertes par mes tests.
+
+→ 59.8% de coverage 
+
+
+- Amélioration de la couverture : 
+Après avoir exécuté la couverture, certaines lignes de code restaient en rouge (non couvertes) 
+
+J'ai donc ajouté des tests supplémentaires :
+- Chaînes avec des imbrications complexes mais équilibrées 
+- Chaînes avec des symboles de fermeture supplémentaires.
+- Chaînes avec des imbrications incorrectes de symboles.
+- Chaînes contenant uniquement des symboles de fermeture.
+- .. 
+
+→ Résultat : Après avoir ajouté ces tests et vérifié à nouveau la couverture dans Eclipse : 72,6 % 
+mais ! 
+ils restaient encore certaines lignes en rouge (en rapport les chaines équilibrées) 
+(Les tests en rouge s'attendent à avoir une valeur de retour égale à True, puisque la chaine est équilibrée, mais la metode isbalanced retourne False) 
+
+→ Modification et implémentation du code de la methode isbalanced pour qu'elle reconaisse les cas corrects oû les chaines sont équilibrées.
+
+On revérifie et là on a un couverture de 100% !!
