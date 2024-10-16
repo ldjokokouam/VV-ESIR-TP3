@@ -48,7 +48,7 @@ Exemples : "{", "[", "(",  (1 seul symbole ouvert et non fermé)
 Exemples : "}", "]", ")", (1 seul symbole fermé et non ouvert)
 "}}}" (plusieurs symboles fermés)
 
-2. J'ai commencé par écrire des tests couvrant les cas de chaque partitions de la première question. 
+2. J'ai commencé par écrire des tests (avec des noms très significatifs) couvrants les cas de chaque partitions de la première question. 
 
 Pour vérifier leur couverture, j'ai utilisé l'option **"Coverage As > JUnit Test" dans Eclipse**, ce qui m'a permis de visualiser les parties du code couvertes par mes tests.
 
@@ -71,5 +71,6 @@ ils restaient encore certaines lignes en rouge (en rapport les chaines équilibr
 (Les tests en rouge s'attendent à avoir une valeur de retour égale à True, puisque la chaine est équilibrée, mais la metode isbalanced retourne False) 
 
 → Modification et implémentation du code de la methode isbalanced pour qu'elle reconaisse les cas corrects oû les chaines sont équilibrées.
+Notre code est basé sur la pile, comme ça on garantit que chaque symbole de fermeture correspond au bon symbole d'ouverture. Si une fermeture ne correspond pas, la fonction retourne immédiatement false, signalant que la chaîne est déséquilibrée.
 
 On revérifie et là on a un couverture de 100% !!
