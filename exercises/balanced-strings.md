@@ -74,3 +74,39 @@ ils restaient encore certaines lignes en rouge (en rapport les chaines équilibr
 Notre code est basé sur la pile, comme ça on garantit que chaque symbole de fermeture correspond au bon symbole d'ouverture. Si une fermeture ne correspond pas, la fonction retourne immédiatement false, signalant que la chaîne est déséquilibrée.
 
 On revérifie et là on a un couverture de 100% !!
+
+
+3.  **Base Choice Coverage (BCC) :**
+→ Méthode de test pour évaluer des expressions logiques complexes : sélectionne une combinaison de base pour les valeurs d'une expression
+et este toutes les variations en modifiant une seule condition à la fois.
+➔ BUT : s'assurer que toutes les parties d'une condition logique sont couvertes et correctement testées.
+
+Si on regarde le code isBalanced : 
+if ((c == ')' && last != '(') ||  (c == '}' && last != '{') || (c == ']' && last != '['))  // Verififcation des paires
+{
+    return false;  // Dans le cas d'une incohérance entre le symbole de fermeture et le dernier symbole d'ouverture                
+}
+→ On a ici un prédicat logique utilisant : && (ET) , || (OU) 
+- Conditions d'ouverture :
+c == '('
+c == '{'
+c == '['
+
+- Conditions de fermeture :
+c == ')'
+`c == '}'
+c == ']'
+
+Mes cas de test couvrent déjà les scénarios suivants :
+
+* Chaînes équilibrées : testChaineVideBALANCED, testPaire1SeulSymboleBALANCED, testMultiplesPaire1SeulSymboleBALANCED, et testPairesImbriqueesBALANCED 
+* Chaînes déséquilibrées : testPairesUNBALANCED, testFermeturesSupplementairesUNBALANCED, testOuverturesSupplementairesUNBALANCED, et testCombinaisonMixteBalancedUNBALANCED
+
+
+J'ai exécuté tous les cas de test existants dans la classe de test StringUtilsTest : j'ai utilisé l'outil de couverture de code intégré dans Eclipse pour analyser le taux de couverture des branches.
+J'ai vérifié que toutes les conditions et branches logiques étaient couvertes par les cas de test.
+→ La couverture de code répond aux exigences de la Base Choice Coverage (BCC).
+
+
+4. **PIT (PIT Mutation Testing)** : outil qui aide à évaluer la qualité d'une suite de tests en introduisant des **mutations** (= petites modifications) dans le code source. 
+→ BUT: voir si les tests détectent ces mutations. 
