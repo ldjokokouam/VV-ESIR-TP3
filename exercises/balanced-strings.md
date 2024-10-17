@@ -110,3 +110,15 @@ J'ai vérifié que toutes les conditions et branches logiques étaient couvertes
 
 4. **PIT (PIT Mutation Testing)** : outil qui aide à évaluer la qualité d'une suite de tests en introduisant des **mutations** (= petites modifications) dans le code source. 
 → BUT: voir si les tests détectent ces mutations. 
+
+Comme je travaille sur Eclipse, j'ai cherché (Ctrl+Alt+R) le fichier pom.xml, dans lequel j'ai rajouté le plugin de pitest maven, puis j'ai fait Run mon projet as MAVEN BUILD.
+
+Puis, après avoir installé MAVEN et configuré les variables d'enironnement, j'ai exécuté ces commandes : 
+**mvn clean** Pour supprimer tous les fichiers générés précédemment.
+→ BUILD SUCCESS
+
+**mvn test** Pour exécuter tous les tests.
+→ BUILD SUCCESS : Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
+
+**>mvn org.pitest:pitest-maven:mutationCoverage** Pour exécuter PIT pour analyser le code et générer un rapport de mutation.
+→ [ERROR] Failed to execute goal org.pitest:pitest-maven:1.9.11:mutationCoverage  (Une erreur sur laquelle j'ai passé beaucoup de temps, mais que même chatgpt n'arrive pas à résoudre)
