@@ -31,7 +31,7 @@
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
-                <version>1.5.2</version>
+                <version>1.9.11</version> <!-- La dernière version recommandée -->
                 <dependencies>
                     <dependency>
                         <groupId>org.pitest</groupId>
@@ -39,6 +39,17 @@
                         <version>0.12</version>
                     </dependency>
                 </dependencies>
+                <configuration>
+                    <targetClasses>
+                        <param>fr.istic.vv.*</param> <!-- Spécifie les classes à analyser -->
+                    </targetClasses>
+                    <targetTests>
+                        <param>fr.istic.vv.*</param> <!-- Spécifie les classes de test -->
+                    </targetTests>
+                    <outputFormats>
+                        <param>HTML</param> <!-- Format du rapport de sortie -->
+                    </outputFormats>
+                </configuration>
             </plugin>
         </plugins>
     </build>
